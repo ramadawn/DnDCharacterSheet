@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">Game Master Utility</string>
+    <string name="menu_title">Main Menu</string>
+    <string name="menu_codex_button">Codex</string>
+    <string name="menu_gametools_button">Game Tools</string>
+    <string name="menu_characterManager_button">Character Manager</string>
+    <string name="codex_title">Codex</string>
+    <string name="codex_monsterBestiary_button">Monster Bestiary</string>
+    <string name="codex_playableRaces_button">Playable Races</string>
+    <string name="codex_playableClasses_button">Playable Classes</string>
+    <string name="gameTools_title">Game Tools</string>
+    <string name="gameTools_rollSimulator_button">Roll Simulator</string>
+    <string name="gameTools_randomSessionGenerator_button">Random Session Generator</string>
+    <string name="gameTools_damageCalculator_button">Damage Calculator</string>
+    <string name="characterManager_title">Character Manager</string>
+    <string name="characterManager_characterList_button">Character List</string>
+    <string name="characterManager_characterCreate_button">Character Creator</string>
+</resources>
