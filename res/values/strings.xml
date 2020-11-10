@@ -16,3 +16,44 @@
     <string name="characterManager_characterList_button">Character List</string>
     <string name="characterManager_characterCreate_button">Character Creator</string>
 </resources>
+
+<string-array name="bestiary_spinner">
+        <item>Beholder</item>
+        <item>Flumph</item>
+        <item>Gelatinous Cube</item>
+        <item>Lich</item>
+        <item>Mind Flayer</item>
+        <item>Ogre</item>
+        <item>Owlbear</item>
+        <item>Red Dragon</item>
+        <item>Skeleton</item>
+        <item>Tarrasque</item>
+    </string-array>
+
+    <string-array name="species_spinner">
+        <item>Dragonborn</item>
+        <item>Dwarf</item>
+        <item>Elf</item>
+        <item>Genasi</item>
+        <item>Goblin</item>
+        <item>Hobgoblin</item>
+        <item>Human</item>
+        <item>Tiefling</item>
+        <item>Tortle</item>
+        <item>Warforged</item>
+    </string-array>
+
+    <string-array name="classes_spinner">
+        <item>Barbarian</item>
+        <item>Bard</item>
+        <item>Cleric</item>
+        <item>Druid</item>
+        <item>Fighter</item>
+        <item>Monk</item>
+        <item>Paladin</item>
+        <item>Ranger</item>
+        <item>Rogue</item>
+        <item>Sorcerer</item>
+        <item>Warlock</item>
+        <item>Wizard</item>
+    </string-array>
