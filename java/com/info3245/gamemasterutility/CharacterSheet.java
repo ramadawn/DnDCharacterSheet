@@ -3,8 +3,18 @@ public class CharacterSheet {
 
 		//Basic character sheet values
 	
-		//Character attributes
+		//Other Stats
 		private String name = "0";
+		private String AC = "0";
+		private String maxHP = "0";
+		private String currentHP = "0";
+		private String weapon1 = "";
+		private String weapon2 = "";
+		private String weapon3 = "";
+		private String armour = "";
+		private String shield = "";
+		
+		//Character attributes
 		private String strength = "0";
 		private String dexterity = "0";
 		private String constitution = "0";
@@ -16,33 +26,63 @@ public class CharacterSheet {
 		
 		//Strength
 		private String athletics = "0";
+		private String athleticsStat = "Strength";
 		
 		//Dexterity
-		
 		private String acrobatics = "0";
+		private String acrobaticsStat = "Dexterity";
+		
 		private String sleightOfHand = "0";
+		private String sleightOfHandStat = "Dexterity";
+		
 		private String stealth = "0";
+		private String stealthStat = "Dexterity";
 		
 		//Intelligence 
 		private String arcana = "0";
+		private String arcanaStat = "Intelligence";
+		
 		private String history = "0";
+		private String historyStat = "Intelligence";
+		
 		private String investigation = "0";
+		private String investigationStat = "Intelligence";
+		
 		private String nature = "0";
+		private String natureStat = "Intelligence";
+		
 		private String religion = "0";
+		private String religionStat = "Intelligence";
 		
 		//wisdom
 		private String animalHandling = "0";
+		private String animalHandlingStat = "Wisdom";
+		
 		private String insight = "0";
+		private String insightStat = "Wisdom";
+		
 		private String medicine = "0";
+		private String medicineStat = "Wisdom";
+		
 		private String perception = "0";
+		private String perceptionStat = "Wisdom";
+		
 		private String survival = "0";
+		private String survivalStat = "Wisdom";
 		
 		// Charisma
 		
 		private String deception = "0";
+		private String deceptionStat = "Charisma";
+		
 		private String intimidation = "0";
+		private String intimidationStat = "Charisma";
+		
 		private String performance = "0";
+		private String performanceStat = "Charisma";
+		
 		private String persuasion = "0";
+		private String persuasionStat = "Charisma";
 		
 		public CharacterSheet() {
 		}
@@ -60,7 +100,43 @@ public class CharacterSheet {
 			charisma = aCharisma;
 		}
 		
-		//Get and Set Anme
+		
+		
+		//Set all Skill values
+		public void setSkills(String athletics, String acrobatics, 
+								String sleightOfHand, String stealth,
+									String arcana, String history,         
+										String investigation, String nature, 
+											String religion, String animalHandling,
+												String insight, String medicine,
+													String perception, String survival, 
+														String deception, String intimidation,
+															String performance, String persuasion) 	
+		
+		
+		{
+			this.athletics = athletics;
+			this.acrobatics = acrobatics;
+			this.sleightOfHand = sleightOfHand;
+			this.stealth = stealth;
+			this.arcana = arcana;
+			this.history = history;
+			this.investigation = investigation;
+			this.nature = nature;
+			this.religion = religion;
+			this.animalHandling = animalHandling;
+			this.insight = insight;
+			this.medicine = medicine;
+			this.perception = perception;
+			this.survival = survival;
+			this.deception = deception;
+			this.intimidation = intimidation;
+			this.performance = performance;
+			this.persuasion = persuasion;
+
+		}
+		
+		//Get and Set name
 		
 		public void setName(String newName) {
 			this.name = newName;
@@ -69,6 +145,96 @@ public class CharacterSheet {
 		public String getName() {
 			return this.name;
 		}
+		
+		//Get and set Hit points
+		//Set max HP with a string
+		public void setMaxHP(String hp) {
+			this.maxHP = hp;
+		}
+		
+		//Set max HP with an int
+		public void setMaxHP(int hp) {
+			this.maxHP = Integer.toString(hp);
+		}
+		
+		//set character to full health
+		public void fullHealth() {
+			this.currentHP = this.maxHP;
+		}
+		
+		
+		//Get current HP as a string
+		public String getCurrentHPStr() {
+			return this.currentHP;
+		}
+		
+		//Get current HP as an Int
+		public int getCurrentHPInt() {
+			return Integer.parseInt(this.currentHP);
+		}
+		
+		//Handles character healing
+		public void Heal(int healAmount){
+			int newHealth = Integer.parseInt(this.currentHP) + healAmount;
+		
+			if(newHealth > Integer.parseInt(this.maxHP)) {
+				this.currentHP = this.maxHP;
+			}
+			
+			else {
+				this.currentHP = Integer.toString(newHealth);
+			}
+		}
+//----------------------------------------------------------
+		//Set weapons
+			//weapon 1
+			public void setWeapon1(String weapon) {
+				this.weapon1 = weapon;
+			}
+			
+			//weapon 2
+			public void setWeapon2(String weapon) {
+				this.weapon2 = weapon;
+			}
+			
+			//weapon 3
+			public void setWeapon3(String weapon) {
+				this.weapon3 = weapon;
+			}
+			
+			
+			//Get weapons
+			//weapon 1
+			public String getWeapon1(String weapon) {
+				return this.weapon1;
+			}
+			
+			//weapon 2
+			public String getWeapon2(String weapon) {
+				return this.weapon2;
+			}
+			
+			//weapon 3
+			public String getWeapon3(String weapon) {
+				return this.weapon3;
+			}
+		
+// Armour and Shield -------------------------------------------
+			public void setArmour(String armour) {
+				this.armour = armour;
+			}
+			
+			public String getArmour() {
+				return this.armour;
+			}
+			
+			public void setShield(String shield) {
+				this.shield = shield;
+			}
+			
+			public String getShield() {
+				return this.shield;
+			}
 		
 //Get and set attributes		
 //-------------Strength--------------------------------		
@@ -187,8 +353,139 @@ public class CharacterSheet {
 					return Integer.parseInt(this.charisma);
 				}
 				
+				//return saving throw mods
+				public int saveThrowMod(int att) {
+					return attributeMod(att);
+				}
+				
+				public int saveThrowMod(String att) {
+					return attributeMod(Integer.parseInt(att));
+				}
+				
+				//get attribute bonus with Integer -> returns Int
+				public int attributeMod(int att) {
+					switch(att) {
+					 	case 1: 
+					 		return -5;
+					 	case 2:
+					 	case 3:
+					 		return -4;
+					 	case 4:
+					 	case 5:
+					 		return -3;
+					 	case 6:
+					 	case 7:
+					 		return -2;
+					 	case 8:
+					 	case 9:
+					 		return -1;
+					 	case 10:
+					 	case 11:
+					 		return 0;
+					 	case 12:
+					 	case 13:	
+					 		return 1;
+					 	case 14:
+					 	case 15:
+					 		return 2;
+					 	case 16:
+					 	case 17:
+					 		return 3;
+					 	case 18:
+					 	case 19:
+					 		return 4;
+					 	case 20:
+					 	case 21:
+					 		return 5;
+					 	case 22:
+					 	case 23:
+					 		return 6;
+					 	default:
+					 		return 7;
+					 	
+					}
+				}
+				
+				
+				
+				//get attribute bonus with String - returns int
+				public int attributeMod(String attstring) {
+					int att = Integer.parseInt(attstring);
+					switch(att) {
+					 	case 1: 
+					 		return -5;
+					 	case 2:
+					 	case 3:
+					 		return -4;
+					 	case 4:
+					 	case 5:
+					 		return -3;
+					 	case 6:
+					 	case 7:
+					 		return -2;
+					 	case 8:
+					 	case 9:
+					 		return -1;
+					 	case 10:
+					 	case 11:
+					 		return 0;
+					 	case 12:
+					 	case 13:	
+					 		return 1;
+					 	case 14:
+					 	case 15:
+					 		return 2;
+					 	case 16:
+					 	case 17:
+					 		return 3;
+					 	case 18:
+					 	case 19:
+					 		return 4;
+					 	case 20:
+					 	case 21:
+					 		return 5;
+					 	case 22:
+					 	case 23:
+					 		return 6;
+					 	default:
+					 		return 7;
+					 	
+					}
+				}
+				
+				
+				
+				
+				
 				
 		//SKILL getter and setters
+				
+				
+				
+				
+				
+				//When given a skill's particular stat will return the right skill modifier
+				public int skillModifier(String SkillStat) {
+					switch(SkillStat) {
+					 	case "Strength":
+					 		return attributeMod(this.getStrInt());
+					 	
+					 	case "Dexterity":
+					 		return attributeMod(this.getDexInt());
+					 		
+					 	case "Intelligence":
+					 		return attributeMod(this.getIntInt());
+					 	case "Wisdom":
+					 		return attributeMod(this.getWisInt());
+					 	case "Charisma":
+					 		return attributeMod(this.getChaInt());
+					 	
+					 	default :
+					 		return -1;
+					}
+				}
+				
+				
 //----------athletics
 				
 				//String
@@ -207,6 +504,11 @@ public class CharacterSheet {
 				//get integer
 				public int getAthleticsInt() {
 					return Integer.parseInt(this.athletics);
+				}
+				
+				//get Skills associated stat
+				public String getAthleticsStat() {
+					return this.athleticsStat;
 				}
 				
 //----------acrobatics
@@ -229,6 +531,11 @@ public class CharacterSheet {
 					return Integer.parseInt(this.acrobatics);
 				}
 				
+				//get Skills associated stat
+				public String getAcrobaticsStat() {
+					return this.acrobaticsStat;
+				}
+				
 //----------acrobatics
 				
 				//String
@@ -249,6 +556,11 @@ public class CharacterSheet {
 					return Integer.parseInt(this.sleightOfHand);
 				}
 				
+				//get Skills associated stat
+				public String getSleightOfHandStat() {
+					return this.sleightOfHandStat;
+				}
+				
 //----------stealth
 				
 				//String
@@ -267,7 +579,12 @@ public class CharacterSheet {
 				//get integer
 				public int getStealthInt() {
 					return Integer.parseInt(this.stealth);
-				}			
+				}	
+				
+				//get Skills associated stat
+				public String getStealthStat() {
+					return this.stealthStat;
+				}
 				
 //----------arcana
 				
@@ -287,7 +604,12 @@ public class CharacterSheet {
 				//get integer
 				public int getArcanaInt() {
 					return Integer.parseInt(this.arcana);
-				}	
+				}
+				
+				//get Skills associated stat
+				public String getArcanaStat() {
+					return this.arcanaStat;
+				}
 				 
 //----------history
 				
@@ -308,6 +630,11 @@ public class CharacterSheet {
 				public int getHistoryInt() {
 					return Integer.parseInt(this.history);
 				}	
+				
+				//get Skills associated stat
+				public String getHistoryStat() {
+					return this.historyStat;
+				}
 
 //----------investigation
 				
@@ -329,6 +656,11 @@ public class CharacterSheet {
 					return Integer.parseInt(this.investigation);
 				}	
 				
+				//get Skills associated stat
+				public String getInvestigationStat() {
+					return this.investigationStat;
+				}
+				
 //----------nature
 				
 				//String
@@ -347,6 +679,11 @@ public class CharacterSheet {
 				//get integer
 				public int getNatureInt() {
 					return Integer.parseInt(this.nature);
+				}
+				
+				//get Skills associated stat
+				public String getNatureStat() {
+					return this.natureStat;
 				}
 
 //----------Religion
@@ -369,6 +706,11 @@ public class CharacterSheet {
 					return Integer.parseInt(this.religion);
 				}
 				
+				//get Skills associated stat
+				public String getReligionStat() {
+					return this.religionStat;
+				}
+				
 //----------animalHandling
 				
 				//String
@@ -389,6 +731,11 @@ public class CharacterSheet {
 					return Integer.parseInt(this.animalHandling);
 				}	
 				
+				//get Skills associated stat
+				public String getAnimalHandlingStat() {
+					return this.animalHandlingStat;
+				}
+				
 //----------insight
 				
 				//String
@@ -407,7 +754,12 @@ public class CharacterSheet {
 				//get integer
 				public int getInsightInt() {
 					return Integer.parseInt(this.insight);
-				}	
+				}
+				
+				//get Skills associated stat
+				public String getInsightStat() {
+					return this.insightStat;
+				}
 								
 //----------medicine
 				
@@ -427,7 +779,12 @@ public class CharacterSheet {
 				//get integer
 				public int getMedicineInt() {
 					return Integer.parseInt(this.medicine);
-				}				
+				}	
+				
+				//get Skills associated stat
+				public String getMedicineStat() {
+					return this.medicineStat;
+				}
 				
 //----------perception
 				
@@ -447,7 +804,12 @@ public class CharacterSheet {
 				//get integer
 				public int getPerceptionInt() {
 					return Integer.parseInt(this.perception);
-				}				
+				}	
+				
+				//get Skills associated stat
+				public String getPerceptionStat() {
+					return this.perceptionStat;
+				}
 
 //----------survival
 				
@@ -467,6 +829,11 @@ public class CharacterSheet {
 				//get integer
 				public int getSurvivalInt() {
 					return Integer.parseInt(this.survival);
+				}
+				
+				//get Skills associated stat
+				public String getSurvivalStat() {
+					return this.survivalStat;
 				}
 
 //----------deception
@@ -489,6 +856,11 @@ public class CharacterSheet {
 					return Integer.parseInt(this.deception);
 				}
 				
+				//get Skills associated stat
+				public String getDeceptionStat() {
+					return this.deceptionStat;
+				}
+				
 //----------intimidation
 				
 				//String
@@ -507,6 +879,11 @@ public class CharacterSheet {
 				//get integer
 				public int getIntimidationInt() {
 					return Integer.parseInt(this.intimidation);
+				}
+				
+				//get Skills associated stat
+				public String getIntimidationStat() {
+					return this.intimidationStat;
 				}
 
 //----------performance
@@ -529,6 +906,11 @@ public class CharacterSheet {
 					return Integer.parseInt(this.performance);
 				}
 				
+				//get Skills associated stat
+				public String getPerformanceStat() {
+					return this.performanceStat;
+				}
+				
 //----------persuasion
 				
 				//String
@@ -547,7 +929,12 @@ public class CharacterSheet {
 				//get integer
 				public int getPersuasionInt() {
 					return Integer.parseInt(this.persuasion);
-				}				
+				}	
+				
+				//get Skills associated stat
+				public String getPersuasionStat() {
+					return this.persuasionStat;
+				}
 				
 				
 				
@@ -559,6 +946,9 @@ public class CharacterSheet {
 		// Character sheet output string
 		public String toString() {
 			return this.name + ","+
+					this.AC + "," + this.maxHP + "," +
+						this.currentHP + "," +
+					
 					this.strength + "," + this.dexterity + "," +
 					this.constitution + "," + this.intelligence + "," +	
 					  this.wisdom + "," + this.charisma + "," +
