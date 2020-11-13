@@ -3,7 +3,6 @@ import java.util.Random;
 public class Battle {
 
     int damageDealt;
-    int healthLeft;
 
     //AC method to determine if attacks hit
     public boolean attackHit(String aAC) {
@@ -31,19 +30,24 @@ public class Battle {
         if (attackAccuracy = false) {
             //Attack misses, no damage dealt
             this.damageDealt = 0;
-            this.healthLeft = defense.getCurrentHPInt();
         } else if (attackAccuracy = true) {
             //Attack hits, calculate damage
             int attackDie = getAttackDie(offense.getWeapon1());
             this.damageDealt = new Random().nextInt(attackDie+1);
-            this.healthLeft = defense.getCurrentHPInt() - damageDealt;
-            if (this.healthLeft < 0) {
-                this.healthLeft = 0;
+            defense.setCurrentHP(defense.getCurrentHPInt() - damageDealt);
+            if (defense.getCurrentHPInt() < 0) {
+                defense.setCurrentHP(0);
             }
         }
 
+        String results;
         //Create String for displaying result
-        String results = offense.getName() + "has dealt " + this.damageDealt + " damage. " + defense.getName() + "has " + healthLeft + " health remaining.";
+        if(defense.getCurrentHPInt() >= 0) {
+            results = offense.getName() + "has dealt " + this.damageDealt + " damage. " + defense.getName() + "has " + defense.getCurrentHPInt() + " health remaining.";
+        } else {
+            results = offense.getName() + "has dealt " + this.damageDealt + " damage. " + defense.getName() + "has " + defense.getCurrentHPInt() + " health remaining. "
+                    + defense.getName() + " has been defeated.";
+        }
         return results;
     }
 
