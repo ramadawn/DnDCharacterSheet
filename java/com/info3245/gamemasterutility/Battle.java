@@ -22,7 +22,7 @@ public class Battle {
     }
 
     //Damage method for calculating damage taken
-    public void battleNumbers(CharacterSheet offense, CharacterSheet defense) {
+    public String battleNumbers(CharacterSheet offense, CharacterSheet defense) {
 
         //Call AC method to determine if attack hits
         boolean attackAccuracy = this.attackHit(defense.getArmour());
@@ -41,15 +41,10 @@ public class Battle {
                 this.healthLeft = 0;
             }
         }
-    }
-    
-    //Method for displaying result
-    public String battleResults(CharacterSheet offense, CharacterSheet defense) {
-        
-        //Create String
+
+        //Create String for displaying result
         String results = offense.getName() + "has dealt " + this.damageDealt + " damage. " + defense.getName() + "has " + healthLeft + " health remaining.";
         return results;
-        
     }
 
     //Method for finding weapon attack die
