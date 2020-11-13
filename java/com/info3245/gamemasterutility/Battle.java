@@ -1,7 +1,10 @@
 import java.util.Random;
 
 public class Battle {
-    
+
+    int damageDealt;
+    int healthLeft;
+
     //AC method to determine if attacks hit
     public boolean attackHit(String aAC) {
 
@@ -15,21 +18,40 @@ public class Battle {
             hitBoolean = false;
         }
         return hitBoolean;
+
+    }
+
+    //Damage method for calculating damage taken
+    public void battleNumbers(CharacterSheet offense, CharacterSheet defense) {
+
+        //Call AC method to determine if attack hits
+        boolean attackAccuracy = this.attackHit(defense.getArmour());
+
+        //If statement for if the attack hits or not.
+        if (attackAccuracy = false) {
+            //Attack misses, no damage dealt
+            this.damageDealt = 0;
+            this.healthLeft = defense.getCurrentHPInt();
+        } else if (attackAccuracy = true) {
+            //Attack hits, calculate damage
+            int attackDie = getAttackDie(offense.getWeapon1());
+            this.damageDealt = new Random().nextInt(attackDie+1);
+            this.healthLeft = defense.getCurrentHPInt() - damageDealt;
+            if (this.healthLeft < 0) {
+                this.healthLeft = 0;
+            }
+        }
+    }
+    
+    //Method for displaying result
+    public String battleResults(CharacterSheet offense, CharacterSheet defense) {
+        
+        //Create String
+        String results = offense.getName() + "has dealt " + this.damageDealt + " damage. " + defense.getName() + "has " + healthLeft + " health remaining.";
+        return results;
         
     }
-    
-    //Damage method for calculating damage taken
-    public int damageTaken(String aWeapon, int aHealth) {
 
-        //Calculate attack die roll
-        int attackDie = getAttackDie(aWeapon);
-        int attackRoll = new Random().nextInt(attackDie+1);
-
-        //Return new health
-        return aHealth - attackRoll;
-
-    }
-    
     //Method for finding weapon attack die
     public int getAttackDie(String aName) {
         switch(aName){
