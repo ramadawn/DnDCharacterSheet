@@ -1,7 +1,24 @@
 import java.util.Random;
 
 public class Battle {
+    
+    //AC method to determine if attacks hit
+    public boolean attackHit(String aAC) {
 
+        int AC = Integer.parseInt(aAC);
+        int hitDie = new Random().nextInt(20+1);
+        boolean hitBoolean;
+
+        if (hitDie >= AC) {
+            hitBoolean = true;
+        } else {
+            hitBoolean = false;
+        }
+        return hitBoolean;
+        
+    }
+    
+    //Damage method for calculating damage taken
     public int damageTaken(String aWeapon, int aHealth) {
 
         //Calculate attack die roll
