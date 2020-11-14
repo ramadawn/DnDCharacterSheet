@@ -48,15 +48,6 @@ public class PlayableRacesActivity extends AppCompatActivity {
         TextView racialTrait = (TextView) findViewById(R.id.racialTraits);
         ImageView speciesImage = (ImageView) findViewById(R.id.speciesImage);
 
-        //Back Button to Codex
-        Button backBtn = (Button) findViewById(R.id.backBtn);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(PlayableRacesActivity.this,CodexActivity.class));
-            }
-        });
-
         //Change data for each Species
         speciesChoice.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
