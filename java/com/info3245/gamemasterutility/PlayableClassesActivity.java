@@ -41,15 +41,6 @@ public class PlayableClassesActivity extends AppCompatActivity {
         TextView classSaves = (TextView) findViewById(R.id.classSaves);
         ImageView classImage = (ImageView) findViewById(R.id.classImage);
 
-        //Back Button to Codex
-        Button backBtn = (Button) findViewById(R.id.backBtn);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(PlayableClassesActivity.this,CodexActivity.class));
-            }
-        });
-
         //Change data for each Class
         classesChoice.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
