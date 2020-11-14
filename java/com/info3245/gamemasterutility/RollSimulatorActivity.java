@@ -46,15 +46,6 @@ public class RollSimulatorActivity extends AppCompatActivity {
         final EditText numRoll = (EditText) findViewById(R.id.diceNum);
         final EditText sideRoll = (EditText) findViewById(R.id.sideNum);
 
-        //Back Button to Codex
-        Button backBtn = (Button) findViewById(R.id.backBtn);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(RollSimulatorActivity.this,GameToolsActivity.class));
-            }
-        });
-
         diceRoll.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
