@@ -162,6 +162,15 @@ public class CharacterSheet {
 			this.currentHP = this.maxHP;
 		}
 		
+		//Set max HP with an int
+		public void setCurrentHP(int hp) {
+			this.currentHP = Integer.toString(hp);
+			}
+		
+		public void setCurrentHP(String hp) {
+			this.currentHP = hp;
+			}
+		
 		
 		//Get current HP as a string
 		public String getCurrentHPStr() {
@@ -205,17 +214,17 @@ public class CharacterSheet {
 			
 			//Get weapons
 			//weapon 1
-			public String getWeapon1(String weapon) {
+			public String getWeapon1() {
 				return this.weapon1;
 			}
 			
 			//weapon 2
-			public String getWeapon2(String weapon) {
+			public String getWeapon2() {
 				return this.weapon2;
 			}
 			
 			//weapon 3
-			public String getWeapon3(String weapon) {
+			public String getWeapon3() {
 				return this.weapon3;
 			}
 		
