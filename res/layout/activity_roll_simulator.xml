@@ -9,26 +9,14 @@
     android:padding="10dp"
     android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <TextView
+        android:id="@+id/titleText"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/backBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back" />
-
-        <TextView
-            android:id="@+id/titleText"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:textSize="30sp"
-            android:text="     Dice Roller"
-            android:layout_gravity="center"
-            android:textStyle="bold" />
-    </LinearLayout>
+        android:textSize="30sp"
+        android:text="Dice Roller"
+        android:layout_gravity="center"
+        android:textStyle="bold" />
 
     <LinearLayout
         android:layout_width="wrap_content"
