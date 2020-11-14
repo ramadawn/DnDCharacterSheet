@@ -15,9 +15,7 @@
     <string name="characterManager_title">Character Manager</string>
     <string name="characterManager_characterList_button">Character List</string>
     <string name="characterManager_characterCreate_button">Character Creator</string>
-</resources>
-
-<string-array name="bestiary_spinner">
+    <string-array name="bestiary_spinner">
         <item>Beholder</item>
         <item>Flumph</item>
         <item>Gelatinous Cube</item>
@@ -57,3 +55,6 @@
         <item>Warlock</item>
         <item>Wizard</item>
     </string-array>
+</resources>
+
+
