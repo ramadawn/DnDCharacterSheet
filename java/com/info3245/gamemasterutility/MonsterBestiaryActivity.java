@@ -69,15 +69,6 @@ public class MonsterBestiaryActivity extends AppCompatActivity {
         tarrasque = new MediaPlayer();
         tarrasque = MediaPlayer.create(this,R.raw.tarrasque);
 
-        //Back Button to Codex
-        Button backBtn = (Button) findViewById(R.id.backBtn);
-        backBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(MonsterBestiaryActivity.this,CodexActivity.class));
-            }
-        });
-
         //Sound Button
         ImageButton soundBtn = (ImageButton) findViewById(R.id.soundBtn);
         soundBtn.setOnClickListener(new View.OnClickListener() {
