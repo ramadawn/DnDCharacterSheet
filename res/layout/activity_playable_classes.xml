@@ -9,24 +9,12 @@
     android:padding="10dp"
     android:orientation="vertical">
 
-    <LinearLayout
+    <Spinner
+        android:id="@+id/classesSpinner"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/backBtn"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Back" />
-
-        <Spinner
-            android:id="@+id/classesSpinner"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:entries="@array/classes_spinner"
-            android:spinnerMode="dropdown" />
-    </LinearLayout>
+        android:entries="@array/classes_spinner"
+        android:spinnerMode="dropdown" />
 
     <ImageView
         android:id="@+id/classImage"
