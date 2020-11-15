@@ -4,34 +4,33 @@ public class Battle {
 
 
     //AC method to determine if attacks hit
-    public static boolean attackHit(String aAC) {
+    public static boolean attackHit(int aAC) {
 
-        int AC = Integer.parseInt(aAC);
         int hitDie = new Random().nextInt(20+1);
         boolean hitBoolean;
 
-        if (hitDie >= AC) {
+        if (hitDie >= aAC) {
             hitBoolean = true;
         } else {
             hitBoolean = false;
         }
         return hitBoolean;
-
+        
     }
 
     //Damage method for calculating damage taken
     public static String battleNumbers(CharacterSheet offense, CharacterSheet defense) {
 
-        int damageDealt = 0;
+        int damageDealt;
 
         //Call AC method to determine if attack hits
         boolean attackAccuracy = attackHit(defense.getACInt());
 
         //If statement for if the attack hits or not.
-        if (attackAccuracy = false) {
+        if (attackAccuracy) {
             //Attack misses, no damage dealt
             damageDealt = 0;
-        } else if (attackAccuracy = true) {
+        } else {
             //Attack hits, calculate damage
             int attackDie = getAttackDie(offense.getWeapon1());
             damageDealt = new Random().nextInt(attackDie+1);
