@@ -244,7 +244,26 @@ public class CharacterSheet {
 			public String getShield() {
 				return this.shield;
 			}
+			
+			public void setAC(String AC) {
+				this.AC = AC;
+			}
 		
+			public void setAC(int AC) {
+				this.AC = Integer.toString(AC);
+			}
+			
+			//Get current HP as a string
+			public String getACString() {
+				return this.AC;
+			}
+			
+			//Get current HP as an Int
+			public int getACInt() {
+				return Integer.parseInt(this.AC);
+			}
+			
+			
 //Get and set attributes		
 //-------------Strength--------------------------------		
 		//set string
