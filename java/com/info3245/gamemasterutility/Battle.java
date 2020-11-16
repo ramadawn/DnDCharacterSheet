@@ -27,7 +27,7 @@ public class Battle {
         boolean attackAccuracy = attackHit(defense.getACInt());
 
         //If statement for if the attack hits or not.
-        if (attackAccuracy) {
+        if (!attackAccuracy) {
             //Attack misses, no damage dealt
             damageDealt = 0;
         } else {
@@ -42,10 +42,10 @@ public class Battle {
 
         String results;
         //Create String for displaying result
-        if(defense.getCurrentHPInt() >= 0) {
-            results = offense.getName() + "has dealt " + damageDealt + " damage. " + defense.getName() + "has " + defense.getCurrentHPInt() + " health remaining.";
+        if(defense.getCurrentHPInt() > 0) {
+            results = offense.getName() + " has dealt " + damageDealt + " damage. " + defense.getName() + " has " + defense.getCurrentHPInt() + " health remaining.";
         } else {
-            results = offense.getName() + "has dealt " + damageDealt + " damage. " + defense.getName() + "has " + defense.getCurrentHPInt() + " health remaining. "
+            results = offense.getName() + " has dealt " + damageDealt + " damage. " + defense.getName() + " has " + defense.getCurrentHPInt() + " health remaining. "
                     + defense.getName() + " has been defeated.";
         }
         return results;
@@ -66,6 +66,12 @@ public class Battle {
                 return 10;
             case "Axe":
                 return 6;
+            case "Monster Claws":
+                return 3;
+            case "Monster Breath":
+                return 6;
+            case "Monster Stomp":
+                return 9;
             default:
                 throw new IllegalStateException("Unexpected value: " + aName);
         }
