@@ -84,6 +84,9 @@ public class CharacterSheet {
 		private String persuasion = "0";
 		private String persuasionStat = "Charisma";
 		
+		//save file name
+		private String saveFileName = "save.txt";
+		
 		public CharacterSheet() {
 		}
 		
@@ -564,7 +567,7 @@ public class CharacterSheet {
 					return this.acrobaticsStat;
 				}
 				
-//----------acrobatics
+//----------setSleightOfHand
 				
 				//String
 				public void setSleightOfHand(String att) {
@@ -966,7 +969,17 @@ public class CharacterSheet {
 				
 				
 				
-			
+//-----------------Save File
+				
+				//set save file
+				public void setSaveFileName(String att) {
+					this.saveFileName = att;
+				}
+				
+				//get save filename
+				public String getSaveFileName(String att) {
+					return this.saveFileName;
+				}
 				
 				
 		
@@ -975,22 +988,52 @@ public class CharacterSheet {
 		public String toString() {
 			return this.name + ","+
 					this.AC + "," + this.maxHP + "," +
-						this.currentHP + "," +
+						this.currentHP + "," 
+					
+						+ this.weapon1 + "," 
+						+ this.weapon2 + "," 
+						+ this.weapon3 + "," 
+						+ this.armour + ","
+						+ this.shield + ","
+						
+						+
+						
 					
 					this.strength + "," + this.dexterity + "," +
 					this.constitution + "," + this.intelligence + "," +	
 					  this.wisdom + "," + this.charisma + "," +
-					  this.athletics + "," + this.acrobatics + "," +
-						this.sleightOfHand + "," + this.stealth + "," +	
-						  this.arcana + "," + this.history + "," +
-						  this.religion + "," + this.nature + "," +
-							this.animalHandling + "," + this.insight + "," +	
-							  this.medicine + "," + this.perception + ","+
-							  	this.deception + "," + this.intimidation + "," +	
-							  		this.performance + "," + this.persuasion + ",";
+					  
+					  this.athletics + "," + 
+					   this.acrobatics + "," + 
+					    this.sleightOfHand + "," + 
+						this.stealth + "," + 	
+						 this.arcana + "," + 
+						  this.history + "," + 
+						 this.investigation + "," +
+						  this.nature + "," + 
+						  this.religion + "," + 
+						   this.animalHandling + "," + 
+						   this.insight + "," +	
+						    this.medicine + "," + 
+						    this.perception + ","+ 
+							this.survival + "," +
+						    this.deception + "," + 
+						     this.intimidation + "," + 
+							  this.performance + "," + 
+						       this.persuasion + "," +
+						       this.saveFileName + ","
+						       ;
 		}
 		
 
+		
+		
+		
+		
+		
+		
+		
+		
 		
 		
 		

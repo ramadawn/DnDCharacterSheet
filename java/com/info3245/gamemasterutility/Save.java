@@ -6,7 +6,7 @@ public class Save {
 		public static void saveSheet(CharacterSheet character)  {
 			
 			String output = character.toString();
-			String path = "save.txt";
+			String path = character.getSaveFileName();
 			
 			
 			try {
