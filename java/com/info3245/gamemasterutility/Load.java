@@ -13,7 +13,7 @@ public class Load {
 	
 	public static void loadSheet(CharacterSheet character)  {
 	
-		String path = "save.txt";
+		String path = character.getSaveFileName();
 		String data;
 		
 	
