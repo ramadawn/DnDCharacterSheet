@@ -1,29 +1,38 @@
-package com.info3245.gamemasterutility;
 
-import android.content.Context;
-import android.widget.Toast;
-
-import java.io.FileWriter;   // Import the FileWriter class
-import java.io.IOException;  // Import the IOException class to handle errors
 
 
 public class Save {
-		public static void saveSheet(CharacterSheet character, Context context)  {
+		
+		
+		public static void writeFileOnInternalStorage(CharacterSheet character){      
+		    
 			
 			String output = character.toString();
 			String path = character.getSaveFileName();
+			FileOutputStream fos = null;
 			
 			
 			try {
-			      FileWriter myWriter = new FileWriter(path);
-			      myWriter.write(output);
-			      myWriter.close();
-			      Toast.makeText(context,"Save SUCCESS",Toast.LENGTH_LONG).show();
-			    } catch (IOException e) {
-					Toast.makeText(context,"Save FAILED",Toast.LENGTH_LONG).show();
-					e.printStackTrace();
-			    }
-			}
+				fos = openFileOutput(path, MODE_PRIVATE);
+		        fos.write(output.getBytes());
+				Toast.makeText(context:this, "Saved to" + getFilesDir() + "/" + path, Toast.LENGTH_LONG).show();
+		    } catch (FileNotFoundException e){
+		    	System.out.println("Character Save Error");
+		        e.printStackTrace();
+		    } catch (IOException e) {
+		    	e.printStackTrace();
+		    } finally {
+		    	if(fos != null) {
+		    		try {
+		    			fos.close();
+		    		}catch(IOException e) {
+		    			e.printStackTrace();
+		    		}
+		    	}
+		    }
+		}
+		    
+		  
 		}	
 
 
