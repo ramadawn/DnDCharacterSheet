@@ -1,9 +1,6 @@
 
-import java.io.FileWriter;
-import java.io.IOException;
-import java.nio.charset.StandardCharsets;
-import java.nio.file.Files;
-import java.nio.file.Paths;
+
+
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
@@ -11,17 +8,12 @@ import java.util.List;
 
 public class Load {
 	
-	public static void loadSheet(CharacterSheet character)  {
+	public static void loadSheet(CharacterSheet character, String data)  {
 	
 		String path = character.getSaveFileName();
-		String data;
 		
 	
-		try {
-			//loads save file and converts contents into list 
-			List<String> lines = Files.readAllLines(Paths.get(path));
-		     data = lines.toString();
-			 System.out.println("Sheet Loaded");
+		
 			 data = data.substring(1, data.length() - 1);
 			 List<String> statList = new ArrayList<String>(Arrays.asList(data.split(",")));
 		     
@@ -61,12 +53,9 @@ public class Load {
 		    character.setSaveFileName(statList.get(32));//persuasion
 		    
 		    
-		    System.out.print(character.toString());
+		    
 		       
-		    } catch (IOException e) {
-		      System.out.println("Cannot Find File");
-		      e.printStackTrace();
-		    }
+		    
 		
 		
 	
