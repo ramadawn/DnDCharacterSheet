@@ -977,7 +977,7 @@ public class CharacterSheet {
 				}
 				
 				//get save filename
-				public String getSaveFileName(String att) {
+				public String getSaveFileName() {
 					return this.saveFileName;
 				}
 				
@@ -1024,41 +1024,5 @@ public class CharacterSheet {
 						       this.saveFileName + ","
 						       ;
 		}
-		
-
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
-		
+	
 }
