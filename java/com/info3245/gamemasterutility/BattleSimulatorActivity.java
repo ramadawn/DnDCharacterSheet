@@ -22,7 +22,11 @@ public class BattleSimulatorActivity extends AppCompatActivity {
     CharacterSheet Drax = new CharacterSheet();
     CharacterSheet Rem = new CharacterSheet();
     CharacterSheet testEnemy = new CharacterSheet();
-    CharacterSheet  Flumph, Goblin, Owlbear, Ogre, Beholder;
+    CharacterSheet  Flumph = new CharacterSheet();
+    CharacterSheet Goblin = new CharacterSheet();
+    CharacterSheet Owlbear = new CharacterSheet();
+    CharacterSheet Ogre = new CharacterSheet();
+    CharacterSheet Beholder = new CharacterSheet();
 
     String result = "";
     int round = 1;

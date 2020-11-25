@@ -80,7 +80,7 @@ public class Battle {
                 return 4;
             case "GoblinAttack":
                 return 8;
-            case "OwnbearAttack":
+            case "OwlbearAttack":
                 return 12;
             case "OgreAttack":
                 return 12;

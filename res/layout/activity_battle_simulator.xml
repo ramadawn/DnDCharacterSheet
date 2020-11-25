@@ -23,7 +23,7 @@
         android:layout_below="@+id/combatantTitle"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="10dp"
-        android:entries="@array/battlesimcharacterspinnerdemo"
+        android:entries="@array/battlesimcharacterspinnerDEMO"
         android:spinnerMode="dialog" />
 
     <TextView
@@ -42,7 +42,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@+id/monsterTitle"
         android:layout_centerHorizontal="true"
-        android:entries="@array/battlesimmonsterspinnerdemo"
+        android:entries="@array/battlesimmonsterspinner"
         android:spinnerMode="dialog" />
 
     <TextView
