@@ -1,3 +1,5 @@
+package com.info3245.gamemasterutility;
+
 //Class for creating a character sheet object
 public class CharacterSheet {
 
@@ -150,6 +152,12 @@ public class CharacterSheet {
 		}
 		
 		//Get and set Hit points
+	public String getMaxHPStr(){
+			return this.maxHP;
+	}
+	public int getMaxHPInt(){
+			return Integer.parseInt(this.maxHP);
+	}
 		//Set max HP with a string
 		public void setMaxHP(String hp) {
 			this.maxHP = hp;
@@ -1024,5 +1032,41 @@ public class CharacterSheet {
 						       this.saveFileName + ","
 						       ;
 		}
-	
+		
+
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
+		
 }

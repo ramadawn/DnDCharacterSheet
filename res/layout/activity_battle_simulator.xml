@@ -1,16 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DamageCalculatorActivity">
+    tools:context=".BattleSimulatorActivity">
 
-    <Button
-        android:id="@+id/button"
+    <TextView
+        android:id="@+id/combatantTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="CALC DMG"
-        tools:layout_editor_absoluteX="145dp"
-        tools:layout_editor_absoluteY="518dp" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        android:layout_centerHorizontal="true"
+        android:text="Combatant"
+        android:textSize="25sp"
+        />
+
+    <Spinner
+        android:id="@+id/combatantSpinner"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/combatantTitle"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:entries="@array/battlesimcharacterspinnerdemo"
+        android:spinnerMode="dialog" />
+
+    <TextView
+        android:id="@+id/monsterTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/combatantSpinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:text="Monster"
+        android:textSize="25sp" />
+
+    <Spinner
+        android:id="@+id/monsterSpinner"
+        android:layout_width="240dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/monsterTitle"
+        android:layout_centerHorizontal="true"
+        android:entries="@array/battlesimmonsterspinnerdemo"
+        android:spinnerMode="dialog" />
+
+    <TextView
+        android:id="@+id/resultText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/monsterSpinner"
+        android:layout_alignBottom="@+id/takeTurnButton"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="50dp"
+        android:gravity="bottom"
+        android:scrollbarAlwaysDrawVerticalTrack="true"
+        android:textSize="15sp" />
+
+    <Button
+        android:id="@+id/takeTurnButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="30dp"
+        android:onClick="takeTurn"
+        android:text="TAKE TURN" />
+</RelativeLayout>

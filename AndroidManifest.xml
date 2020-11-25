@@ -17,7 +17,7 @@
             android:name=".CharacterListActivity"
             android:parentActivityName=".CharacterManagerActivity" />
         <activity
-            android:name=".DamageCalculatorActivity"
+            android:name=".BattleSimulatorActivity"
             android:parentActivityName=".GameToolsActivity" />
         <activity
             android:name=".RandomSessionGeneratorActivity"

@@ -11,7 +11,7 @@
     <string name="gameTools_title">Game Tools</string>
     <string name="gameTools_rollSimulator_button">Roll Simulator</string>
     <string name="gameTools_randomSessionGenerator_button">Random Session Generator</string>
-    <string name="gameTools_damageCalculator_button">Damage Calculator</string>
+    <string name="gameTools_battleSimulator_button">Battle Simulator</string>
     <string name="characterManager_title">Character Manager</string>
     <string name="characterManager_characterList_button">Character List</string>
     <string name="characterManager_characterCreate_button">Character Creator</string>
@@ -27,7 +27,6 @@
         <item>Skeleton</item>
         <item>Tarrasque</item>
     </string-array>
-
     <string-array name="species_spinner">
         <item>Dragonborn</item>
         <item>Dwarf</item>
@@ -40,7 +39,6 @@
         <item>Tortle</item>
         <item>Warforged</item>
     </string-array>
-
     <string-array name="classes_spinner">
         <item>Barbarian</item>
         <item>Bard</item>
@@ -55,6 +53,14 @@
         <item>Warlock</item>
         <item>Wizard</item>
     </string-array>
+    <string-array name="battlesimcharacterspinnerdemo">
+        <item>Jorge</item>
+        <item>Drax</item>
+        <item>Rem</item>
+    </string-array>
+    <string-array name="battlesimmonsterspinnerdemo">
+        <item>Skeleton</item>
+        <item>Slime</item>
+        <item>Tarrasque</item>
+    </string-array>
 </resources>
-
-

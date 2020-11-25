@@ -1,3 +1,5 @@
+package com.info3245.gamemasterutility;
+
 import java.util.Random;
 
 public class Battle {
@@ -72,6 +74,8 @@ public class Battle {
                 return 6;
             case "Monster Stomp":
                 return 9;
+            case "Tarrasque Claw":
+                return 28;
             default:
                 throw new IllegalStateException("Unexpected value: " + aName);
         }
