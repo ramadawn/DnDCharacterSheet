@@ -53,14 +53,16 @@
         <item>Warlock</item>
         <item>Wizard</item>
     </string-array>
-    <string-array name="battlesimcharacterspinnerdemo">
+    <string-array name="battlesimcharacterspinnerDEMO">
         <item>Jorge</item>
         <item>Drax</item>
         <item>Rem</item>
     </string-array>
-    <string-array name="battlesimmonsterspinnerdemo">
-        <item>Skeleton</item>
-        <item>Slime</item>
-        <item>Tarrasque</item>
+    <string-array name="battlesimmonsterspinner">
+        <item>Flumph</item>
+        <item>Goblin</item>
+        <item>Owlbear</item>
+        <item>Ogre</item>
+        <item>Beholder</item>
     </string-array>
 </resources>

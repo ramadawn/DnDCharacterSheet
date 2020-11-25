@@ -1,3 +1,5 @@
+package com.info3245.gamemasterutility;
+
 import java.util.Random;
 
 public class SkillCheck {

@@ -76,9 +76,18 @@ public class Battle {
                 return 9;
             case "Tarrasque Claw":
                 return 28;
+            case "FlumphAttack":
+                return 4;
+            case "GoblinAttack":
+                return 8;
+            case "OwnbearAttack":
+                return 12;
+            case "OgreAttack":
+                return 12;
+            case "BeholderAttack":
+                return 12;
             default:
                 throw new IllegalStateException("Unexpected value: " + aName);
         }
     }
-
 }

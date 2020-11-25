@@ -22,9 +22,6 @@ public class BattleSimulatorActivity extends AppCompatActivity {
     CharacterSheet Drax = new CharacterSheet();
     CharacterSheet Rem = new CharacterSheet();
     CharacterSheet testEnemy = new CharacterSheet();
-    CharacterSheet skeleton = new CharacterSheet();
-    CharacterSheet slime = new CharacterSheet();
-    CharacterSheet tarrasque = new CharacterSheet();
     CharacterSheet  Flumph, Goblin, Owlbear, Ogre, Beholder;
 
     String result = "";
@@ -39,11 +36,11 @@ public class BattleSimulatorActivity extends AppCompatActivity {
         //initialize the monster spinner
         Spinner monsterSpinner = findViewById(R.id.monsterSpinner);
         //set up array adapter with custom layout(Put this after the real character array once that is implemented)
-        ArrayAdapter<String> combatantAdapter = new ArrayAdapter<>(this, R.layout.custom_spinner,getResources().getStringArray(R.array.battlesimcharacterspinnerdemo));
+        ArrayAdapter<String> combatantAdapter = new ArrayAdapter<>(this, R.layout.custom_spinner,getResources().getStringArray(R.array.battlesimcharacterspinnerDEMO));
         combatantAdapter.setDropDownViewResource(R.layout.customer_spinner_dropdown);
         combatantSpinner.setAdapter(combatantAdapter);
         //same for monster spinner
-        ArrayAdapter<String> monsterAdapter = new ArrayAdapter<>(this, R.layout.custom_spinner,getResources().getStringArray(R.array.battlesimmonsterspinnerdemo));
+        ArrayAdapter<String> monsterAdapter = new ArrayAdapter<>(this, R.layout.custom_spinner,getResources().getStringArray(R.array.battlesimmonsterspinner));
         monsterAdapter.setDropDownViewResource(R.layout.customer_spinner_dropdown);
         monsterSpinner.setAdapter(monsterAdapter);
 
@@ -72,9 +69,6 @@ public class BattleSimulatorActivity extends AppCompatActivity {
         Flumph.setMaxHP(10);
         Flumph.setAC(12);
         Flumph.setWeapon1("FlumphAttack");
-        //add the following to the getAttackDie method in the Battle Class
-        //case "FlumphAttack":
-        //return 4;
         Flumph.setAttributes("6","15","10","14","14","11");
         Flumph.setSkills("0","0","0","0","4","4","0","0","4",
                 "0","0","0","0","0","0","0","0","0");
@@ -84,9 +78,6 @@ public class BattleSimulatorActivity extends AppCompatActivity {
         Goblin.setMaxHP(12);
         Goblin.setAC(15);
         Goblin.setWeapon1("GoblinAttack");
-        //add the following to the getAttackDie method in the Battle Class
-        //case "GoblinAttack":
-        //return 8;
         Goblin.setAttributes("8","14","10","10","8","8");
         Goblin.setSkills("0","0","0","6","0","0","0","0","0",
                 "0","0","0","0","0","0","0","0","0");
@@ -96,9 +87,6 @@ public class BattleSimulatorActivity extends AppCompatActivity {
         Owlbear.setMaxHP(30);
         Owlbear.setAC(13);
         Owlbear.setWeapon1("OwlbearAttack");
-        //add the following to the getAttackDie method in the Battle Class
-        //case "OwlbearAttack":
-        //return 12;
         Owlbear.setAttributes("20","12","17","3","12","7");
         Owlbear.setSkills("0","0","0","0","0","0","0","0","0",
                 "0","0","0","3","0","0","0","0","0");
@@ -108,9 +96,6 @@ public class BattleSimulatorActivity extends AppCompatActivity {
         Ogre.setMaxHP(60);
         Ogre.setAC(15);
         Ogre.setWeapon1("OgreAttack");
-        //add the following to the getAttackDie method in the Battle Class
-        //case "OgreAttack":
-        //return 12;
         Ogre.setAttributes("19","8","16","5","7","7");
         Ogre.setSkills("0","0","0","0","0","0","0","0","0",
                 "0","0","0","0","0","0","0","0","0");
@@ -120,9 +105,6 @@ public class BattleSimulatorActivity extends AppCompatActivity {
         Beholder.setMaxHP(90);
         Beholder.setAC(18);
         Beholder.setWeapon1("BeholderAttack");
-        //add the following to the getAttackDie method in the Battle Class
-        //case "BeholderAttack":
-        //return 12;
         Beholder.setAttributes("10","14","18","17","15","17");
         Beholder.setSkills("0","0","0","0","0","0","0","0","0",
                 "0","0","0","12","0","0","0","0","0");
@@ -135,7 +117,7 @@ public class BattleSimulatorActivity extends AppCompatActivity {
                 String selectedItem = combatantSpinner.getItemAtPosition(position).toString();
                 Toast.makeText(getApplicationContext(),"Loading character: " + selectedItem, Toast.LENGTH_LONG).show();
                 switch(selectedItem) {
-//                    How do we make a dynamic spinner?
+                    //this will have to dynamically change with the retrieved character list
                     case "Jorge":
                         testCombatant.setName(Jorge.getName());
                         testCombatant.setAC(Jorge.getACString());
@@ -174,26 +156,40 @@ public class BattleSimulatorActivity extends AppCompatActivity {
                 String selectedItem = monsterSpinner.getItemAtPosition(position).toString();
                 Toast.makeText(getApplicationContext(),"Loading monster: " + selectedItem, Toast.LENGTH_LONG).show();
                 switch(selectedItem) {
-                    case "Skeleton":
-                        testEnemy.setName(skeleton.getName());
-                        testEnemy.setAC(skeleton.getACString());
-                        testEnemy.setMaxHP(skeleton.getMaxHPStr());
+                    case "Flumph":
+                        testEnemy.setName(Flumph.getName());
+                        testEnemy.setAC(Flumph.getACString());
+                        testEnemy.setMaxHP(Flumph.getMaxHPStr());
                         testEnemy.fullHealth();
-                        testEnemy.setWeapon1(skeleton.getWeapon1());
+                        testEnemy.setWeapon1(Flumph.getWeapon1());
                         break;
-                    case "Slime":
-                        testEnemy.setName(slime.getName());
-                        testEnemy.setAC(slime.getACString());
-                        testEnemy.setMaxHP(slime.getMaxHPStr());
+                    case "Goblin":
+                        testEnemy.setName(Goblin.getName());
+                        testEnemy.setAC(Goblin.getACString());
+                        testEnemy.setMaxHP(Goblin.getMaxHPStr());
                         testEnemy.fullHealth();
-                        testEnemy.setWeapon1(slime.getWeapon1());
+                        testEnemy.setWeapon1(Goblin.getWeapon1());
                         break;
-                    case "Tarrasque":
-                        testEnemy.setName(tarrasque.getName());
-                        testEnemy.setAC(tarrasque.getACString());
-                        testEnemy.setMaxHP(tarrasque.getMaxHPStr());
+                    case "Owlbear":
+                        testEnemy.setName(Owlbear.getName());
+                        testEnemy.setAC(Owlbear.getACString());
+                        testEnemy.setMaxHP(Owlbear.getMaxHPStr());
                         testEnemy.fullHealth();
-                        testEnemy.setWeapon1(tarrasque.getWeapon1());
+                        testEnemy.setWeapon1(Owlbear.getWeapon1());
+                        break;
+                    case "Ogre":
+                        testEnemy.setName(Ogre.getName());
+                        testEnemy.setAC(Ogre.getACString());
+                        testEnemy.setMaxHP(Ogre.getMaxHPStr());
+                        testEnemy.fullHealth();
+                        testEnemy.setWeapon1(Ogre.getWeapon1());
+                        break;
+                    case "Beholder":
+                        testEnemy.setName(Beholder.getName());
+                        testEnemy.setAC(Beholder.getACString());
+                        testEnemy.setMaxHP(Beholder.getMaxHPStr());
+                        testEnemy.fullHealth();
+                        testEnemy.setWeapon1(Beholder.getWeapon1());
                         break;
                 }
                 round = 1;

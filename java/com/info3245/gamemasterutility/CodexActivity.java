@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 
 public class CodexActivity extends AppCompatActivity {
 
@@ -13,33 +12,20 @@ public class CodexActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_codex);
-
-        //Click to go to Bestiary
-        Button bestiaryBtn = (Button) findViewById(R.id.bestiarybtn);
-        bestiaryBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(CodexActivity.this, MonsterBestiaryActivity.class));
-            }
-        });
-
-        //Click to go to Playable Races
-        Button speciesBtn = (Button) findViewById(R.id.speciesbtn);
-        speciesBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(CodexActivity.this, PlayableRacesActivity.class));
-            }
-        });
-
-        //Click to go to Playable Classes
-        Button classesBtn = (Button) findViewById(R.id.classesbtn);
-        classesBtn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                startActivity(new Intent(CodexActivity.this, PlayableClassesActivity.class));
-            }
-        });
     }
-
+    /** Called when the user taps the Monster Bestiary button */
+    public void openMonsterBestiaryActivity(View view) {
+        Intent intent = new Intent(this, MonsterBestiaryActivity.class);
+        startActivity(intent);
+    }
+    /** Called when the user taps the Playable Races button */
+    public void openPlayableRacesActivity(View view) {
+        Intent intent = new Intent(this, PlayableRacesActivity.class);
+        startActivity(intent);
+    }
+    /** Called when the user taps the Playable Classes button */
+    public void openPlayableClassesActivity(View view) {
+        Intent intent = new Intent(this, PlayableClassesActivity.class);
+        startActivity(intent);
+    }
 }
