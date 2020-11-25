@@ -60,7 +60,7 @@ public class BattleSimulatorActivity extends AppCompatActivity {
         Drax.setAC(4);
         Drax.setMaxHP(70);
         Drax.fullHealth();
-        Drax.setWeapon1("Spear");
+        Drax.setWeapon1("Lance");
 
         Rem.setName("Rem");
         Rem.setAC(3);
