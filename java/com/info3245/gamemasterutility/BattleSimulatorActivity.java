@@ -208,10 +208,33 @@ public class BattleSimulatorActivity extends AppCompatActivity {
     }
     public void takeTurn(View view) {
         TextView resultDisplay = (TextView) findViewById(R.id.resultText);
-        result = Battle.battleNumbers(testCombatant, testEnemy);
+
+        boolean combatantHpCheck = Battle.enemyHPcheck(testCombatant.getCurrentHPInt());
+        boolean enemyHpCheck = Battle.enemyHPcheck(testEnemy.getCurrentHPInt());
+        if (combatantHpCheck) {
+            if (enemyHpCheck) {
+                result = Battle.battleNumbers(testCombatant, testEnemy);
+            } else {
+                result = "Enemy Already Defeated. Change Monster.";
+            }
+        } else {
+            result = "Player Defeated. Change Character.";
+        }
         resultDisplay.append("Round " + round + ":\n" + result + "\n");
-        result = Battle.battleNumbers(testEnemy, testCombatant);
+
+        boolean combatantHpCheck2 = Battle.enemyHPcheck(testCombatant.getCurrentHPInt());
+        boolean enemyHpCheck2 = Battle.enemyHPcheck(testEnemy.getCurrentHPInt());
+        if (enemyHpCheck2) {
+            if (combatantHpCheck2) {
+                result = Battle.battleNumbers(testEnemy, testCombatant);
+            } else {
+                result = "Player Defeated. Change Character.";
+            }
+        } else {
+            result = "Enemy Already Defeated. Change Monster.";
+        }
         resultDisplay.append(result + "\n");
+
         round++;
     }
 }
