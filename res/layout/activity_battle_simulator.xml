@@ -25,12 +25,22 @@
         android:layout_marginTop="10dp"
         android:entries="@array/battlesimcharacterspinnerDEMO"
         android:spinnerMode="dialog" />
+    
+    <Button
+        android:id="@+id/healCharacterButton"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/combatantSpinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:onClick="healCharacterAction"
+        android:text="HEAL CHARACTER" />
 
     <TextView
         android:id="@+id/monsterTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/combatantSpinner"
+        android:layout_below="@id/healCharacterButton"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
         android:text="Monster"
@@ -40,16 +50,27 @@
         android:id="@+id/monsterSpinner"
         android:layout_width="240dp"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:layout_below="@+id/monsterTitle"
         android:layout_centerHorizontal="true"
         android:entries="@array/battlesimmonsterspinner"
         android:spinnerMode="dialog" />
+    
+    <Button
+        android:id="@+id/healEnemyButton"
+        android:layout_width="175dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/monsterSpinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:onClick="healEnemyAction"
+        android:text="HEAL MONSTER" />
 
     <TextView
         android:id="@+id/resultText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/monsterSpinner"
+        android:layout_below="@+id/healEnemyButton"
         android:layout_alignBottom="@+id/takeTurnButton"
         android:layout_centerHorizontal="true"
         android:layout_marginBottom="50dp"
