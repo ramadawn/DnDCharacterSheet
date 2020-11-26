@@ -237,4 +237,15 @@ public class BattleSimulatorActivity extends AppCompatActivity {
 
         round++;
     }
+	
+    public void healCharacterAction(View view) {
+        Button cHealButton = (Button) findViewById(R.id.healCharacterButton);
+        testCombatant.Heal(testCombatant.getMaxHPInt());
+    }
+
+    public void healEnemyAction(View view) {
+        Button eHealButton = (Button) findViewById(R.id.healCharacterButton);
+        testEnemy.Heal(testEnemy.getMaxHPInt());
+    }
+	
 }
