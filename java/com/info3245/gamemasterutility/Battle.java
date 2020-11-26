@@ -19,6 +19,17 @@ public class Battle {
         return hitBoolean;
         
     }
+    
+    //HP Check method to determine if enemy has HP remaining
+    public static boolean enemyHPcheck(int hp) {
+        boolean hpBoolean;
+        if (hp > 0) {
+            hpBoolean = true;
+        } else {
+            hpBoolean = false;
+        }
+        return hpBoolean;
+    }
 
     //Damage method for calculating damage taken
     public static String battleNumbers(CharacterSheet offense, CharacterSheet defense) {
