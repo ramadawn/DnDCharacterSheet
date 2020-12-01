@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import java.io.FileNotFoundException;
@@ -12,21 +13,13 @@ import java.io.IOException;
 
 public class CharacterCreatorActivity extends AppCompatActivity {
 
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_character_creator);
 
-        CharacterSheet newCharacter = new CharacterSheet();
-        newCharacter.setAttributes("8","3","6","2","2","7");
-        newCharacter.setSkills("4","2","7","2","7","3",
-                "1","8","0","3","1","4","1","7","3","4","4","2");
-        newCharacter.setWeapon1("sword");
-        newCharacter.setName("Ronaldo");
-        newCharacter.setAC("6");
-        newCharacter.setMaxHP("30");
-        newCharacter.fullHealth();
-        newCharacter.setSaveFileName(newCharacter.getName() + "_save.txt");
     }
 
     public void saveCharacter(CharacterSheet character) {
@@ -53,9 +46,31 @@ public class CharacterCreatorActivity extends AppCompatActivity {
     }
     public void saveButton(View view){
         CharacterSheet newChar = new CharacterSheet();
-
-        //get stats from text into character object
-
+        //Initialize edit text boxes
+        EditText inputName = findViewById(R.id.etName);
+        EditText inputHP = findViewById(R.id.etHealth);
+        EditText inputWeapon = findViewById(R.id.etWeapon);
+        EditText inputAC = findViewById(R.id.etAC);
+        EditText inputStrength = findViewById(R.id.etStrength);
+        EditText inputDexterity = findViewById(R.id.etDexterity);
+        EditText inputConstitution = findViewById(R.id.etConstitution);
+        EditText inputIntelligence = findViewById(R.id.etIntelligence);
+        EditText inputWisdom = findViewById(R.id.etWisdom);
+        EditText inputCharisma = findViewById(R.id.etCharisma);
+        //Put entered text into character
+        newChar.setName(inputName.getText().toString());
+        newChar.setMaxHP(inputHP.getText().toString());
+        newChar.setCurrentHP(inputHP.getText().toString());
+        newChar.setWeapon1(inputWeapon.getText().toString());
+        newChar.setAC(inputAC.getText().toString());
+        newChar.setAttributes(inputStrength.getText().toString(),
+                inputDexterity.getText().toString(),
+                inputConstitution.getText().toString(),
+                inputIntelligence.getText().toString(),
+                inputWisdom.getText().toString(),
+                inputCharisma.getText().toString());
+        newChar.setSaveFileName(newChar.getName() + "_save.txt");
+        //save character to file
         saveCharacter(newChar);
     }
 }
