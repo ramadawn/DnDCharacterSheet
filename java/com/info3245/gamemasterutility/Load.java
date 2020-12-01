@@ -10,7 +10,6 @@ public class Load {
 	
 	public static void loadSheet(CharacterSheet character, String data)  {
 
-		data = data.substring(1, data.length() - 1);
 		List<String> statList = new ArrayList<String>(Arrays.asList(data.split(",")));
 
 		character.setName(statList.get(0)); //name

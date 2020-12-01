@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CharacterCreatorActivity">
+
+    <TextView
+        android:id="@+id/tvName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:text="Name:"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvNameDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvName"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/tvName"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvHealth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvName"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:text="Health:"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvHealthDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvHealth"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/tvHealth"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvWeapon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvHealth"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:text="Weapon:"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvWeaponDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvWeapon"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/tvWeapon"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvAC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvWeapon"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:text="AC:"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvACDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvAC"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/tvAC"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvStrength"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvAC"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:text="Strength:"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvStrengthDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvStrength"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/tvStrength"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvDexterity"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvStrength"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:text="Dexterity:"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvDexterityDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvDexterity"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/tvDexterity"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvConstitution"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvDexterity"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:text="Constitution:"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvConstitutionDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvConstitution"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/tvConstitution"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvIntelligence"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvConstitution"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:text="Intelligence:"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvIntelligenceDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvIntelligence"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/tvIntelligence"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvWisdom"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvIntelligence"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:text="Wisdom:"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvWisdomDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvWisdom"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/tvWisdom"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvCharisma"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tvWisdom"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="25dp"
+        android:text="Charisma:"
+        android:textSize="12sp" />
+
+    <TextView
+        android:id="@+id/tvCharismaDisplay"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tvCharisma"
+        android:layout_alignParentEnd="true"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@+id/tvCharisma"
+        android:textSize="12sp" />
+</RelativeLayout>

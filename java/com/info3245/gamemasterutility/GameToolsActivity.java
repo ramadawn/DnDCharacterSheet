@@ -23,9 +23,9 @@ public class GameToolsActivity extends AppCompatActivity {
         Intent intent = new Intent(this, RandomSessionGeneratorActivity.class);
         startActivity(intent);
     }
-    /** Called when the user taps the Damage Calculator button */
-    public void openDamageCalculatorActivity(View view) {
-        Intent intent = new Intent(this, DamageCalculatorActivity.class);
+    /** Called when the user taps the Battle Simulator button */
+    public void openBattleSimulatorActivity(View view) {
+        Intent intent = new Intent(this, BattleSimulatorActivity.class);
         startActivity(intent);
     }
 }

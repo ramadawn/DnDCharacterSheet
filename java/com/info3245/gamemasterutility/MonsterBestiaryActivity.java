@@ -39,7 +39,7 @@ public class MonsterBestiaryActivity extends AppCompatActivity {
         setContentView(R.layout.activity_monster_bestiary);
 
         final Spinner bestiaryChoice = (Spinner) findViewById(R.id.bestiarySpinner);
-
+        //initialize text views
         TextView monsterName = (TextView) findViewById(R.id.monsterName);
         TextView monsterDescription = (TextView) findViewById(R.id.monsterDescription);
         TextView monsterSize = (TextView) findViewById(R.id.monsterSize);
@@ -47,7 +47,7 @@ public class MonsterBestiaryActivity extends AppCompatActivity {
         TextView monsterAlignment = (TextView) findViewById(R.id.monsterAlignment);
         TextView monsterRating = (TextView) findViewById(R.id.monsterRating);
         ImageView monsterImage = (ImageView) findViewById(R.id.monsterImage);
-
+        //Set audio files
         beholder = new MediaPlayer();
         beholder = MediaPlayer.create(this,R.raw.beholder);
         dragon = new MediaPlayer();

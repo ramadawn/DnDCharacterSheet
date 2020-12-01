@@ -9,7 +9,11 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.GameMasterUtility">
-        <activity android:name=".PlayableClassesActivity" android:parentActivityName=".CodexActivity"/>
+        <activity android:name=".CharacterDisplayActivity"
+            android:parentActivityName=".CharacterListActivity"/>
+        <activity
+            android:name=".PlayableClassesActivity"
+            android:parentActivityName=".CodexActivity" />
         <activity
             android:name=".CharacterCreatorActivity"
             android:parentActivityName=".CharacterManagerActivity" />
